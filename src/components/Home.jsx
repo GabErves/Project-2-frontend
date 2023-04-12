@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Header from './Header';
+import { Carousel } from 'react-bootstrap';
 
 const Home = () => {
   return (
