@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { format } from 'date-fns';
+
 import Header from './Header';
 const Post = () => {
   const params = useParams(); //gets object with id from path in <Route>
@@ -11,8 +13,13 @@ const Post = () => {
 
   const [loading, setLoading] = useState(false);
   const [editing, setEditing] = useState(false);
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+
+  const [datePosted, setDatePosted] = useState(new Date());
+  const [timePosted, setTimePosted] = useState('');
+
+  const [dateUpdated, setDateUpdated] = useState(new Date());
+  const [timeUpdated, setTimeUpdated] = useState('');
+
   const [error, setError] = useState(null);
   const [postData, setPostData] = useState([]);
 
@@ -24,10 +31,11 @@ const Post = () => {
       const response = await axios.get(URL);
       setPostData(response.data);
 
-      setTitle(postData.title);
-      console.log(title);
-      setContent(postData.content);
-      console.log(content);
+      setDatePosted(new Date(response.data.originally_published));
+      setTimePosted(datePosted.toLocaleTimeString([], { hour12: false }));
+
+      setDateUpdated(new Date(response.data.last_updated));
+      setTimeUpdated(dateUpdated.toLocaleTimeString([], { hour12: false }));
 
       console.log(JSON.stringify(response));
     } catch (error) {
@@ -63,7 +71,21 @@ const Post = () => {
                   </h3>
                   <h6 className="card-subtitle mb-2 text-muted">(@User)</h6>
                   <p className="card-text">{postData.content}</p>
-                  <img className='size' src='https://contenthub-static.grammarly.com/blog/wp-content/uploads/2017/11/how-to-write-a-blog-post.jpeg'></img>
+                  <img
+                    className="size"
+                    src="https://contenthub-static.grammarly.com/blog/wp-content/uploads/2017/11/how-to-write-a-blog-post.jpeg"
+                  ></img>
+
+                  <p>
+                    Last Updated: {format(dateUpdated, 'dd/mm/yyyy')}{' '}
+                    {timeUpdated}{' '}
+                  </p>
+
+                  <p>
+                    Originally Published: {format(datePosted, 'dd/mm/yyyy')}{' '}
+                    {timePosted}
+                    {}
+                  </p>
                 </div>
               </div>
             </div>
@@ -73,7 +95,6 @@ const Post = () => {
 
       <div className="container text-center ">
         <Link to={`/posts/${postData.id}/edit`}>
-        
           <button type="button" className="btn btn-primary btn-lg mx-3">
             Edit Post
           </button>
