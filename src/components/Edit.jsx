@@ -130,9 +130,6 @@ const Edit = () => {
             Cancel
           </button>
         </Link>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <Button variant="primary">Primary</Button>{' '}
-        
       </div>
     </>
   );
