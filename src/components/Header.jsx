@@ -1,13 +1,13 @@
 import React from 'react';
 import Logo22 from './Logo22.png';
-import './Header.css';
+//import './Header.css';
 
 import { NavLink as RouterLink } from 'react-router-dom';
 
 const Header = () => {
   const getClassName = (props) => {
     return `${
-      props.isActive ? 'font-bold' : ''
+      props.isActive ? 'fw-bold' : ''
     } hover:underline hover:text-gray-600 transition duration-300 `;
   };
 
@@ -15,12 +15,10 @@ const Header = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
+          <RouterLink to="/">
+            <img className="logo" src={Logo22} alt="My Image" />
+          </RouterLink>
 
-      <RouterLink to="/">
-      <img className='logo' src={Logo22} alt="My Image" />
-      </RouterLink>
-          
-         
           {/* <button
 =======
           <RouterLink to="/">
@@ -40,7 +38,10 @@ const Header = () => {
             <ul className="navbar-nav ms-auto fs-3">
               <li className="nav-link navs">
                 <h3 className="navs">
-                  <RouterLink className={`${getClassName} text-2xl`} to="/">
+                  <RouterLink
+                    className={`${() => getClassName()} text-2xl  fs-1 `}
+                    to="/"
+                  >
                     Home
                   </RouterLink>
                 </h3>
@@ -49,7 +50,7 @@ const Header = () => {
               <li className="nav-link">
                 <h3 className="navs">
                   <RouterLink
-                    className={`${getClassName} text-2xl `}
+                    className={`${() => getClassName()} text-2xl fs-1 `}
                     to="/create"
                   >
                     Create
@@ -60,7 +61,7 @@ const Header = () => {
               <li className="nav-link">
                 <h3 className="navs navbar-nav navbar-right">
                   <RouterLink
-                    className={`${getClassName} text-2xl `}
+                    className={`${() => getClassName()} text-2xl  `}
                     to="/posts"
                   >
                     All Posts

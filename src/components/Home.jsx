@@ -1,8 +1,7 @@
 import React from 'react';
-import './Header.css';
+//import './Header.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Header from './Header';
-
 
 const Home = () => {
   return (

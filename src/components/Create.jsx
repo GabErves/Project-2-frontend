@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import './Header.css';
+//import './Header.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -30,8 +30,7 @@ const Create = () => {
 
   return (
     <>
-      <h2 className="p-4 font-bold display-4">Create Post</h2>
-
+      <h2 className="p-4 display-4 fw-bolder">Create Post</h2>
       <form className="flabel py-3">
         <div className="container">
           <label className="flabel px-3 fs-3">
