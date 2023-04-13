@@ -18,6 +18,10 @@ import Posts from './components/Posts';
 
 import NotFound from './components/NotFound';
 
+import Edit from './components/Edit';
+
+import Delete from './components/Delete';
+
 const App = () => {
   return (
     <>
@@ -26,6 +30,8 @@ const App = () => {
         <Route index element={<Home />}></Route>
         <Route path="/create" element={<Create />}></Route>
         <Route path="/posts/:id" element={<Post />}></Route>
+        <Route path="/posts/:id/edit" element={<Edit />}></Route>
+        <Route path="/posts/:id/delete" element={<Delete />}></Route>
         <Route path="/posts" element={<Posts />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="*" element={<NotFound />}></Route>
