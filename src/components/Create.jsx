@@ -30,10 +30,16 @@ const Create = () => {
 
   return (
     <>
-      <h2 className="p-4 display-4 fw-bolder">Create Post</h2>
+      <h2 className="p-4 display-4 fw-bolder" data-testid="create post">
+        Create Post
+      </h2>
       <form className="flabel py-3">
         <div className="container">
-          <label className="flabel px-3 fs-3">
+          <label
+            className="flabel px-3 fs-3"
+            data-testid="Title"
+            htmlfor="titleInput"
+          >
             <h3> Title </h3>
           </label>
 
@@ -43,17 +49,23 @@ const Create = () => {
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+              data-testid="titleInput"
             />
           </div>
         </div>
         <div className="container pt-4 text-start">
-          <label className="flabel fs-3">
+          <label
+            className="flabel fs-3"
+            data-testid="Content"
+            htmlfor="contentInput"
+          >
             <h3> Content </h3>
           </label>
 
           <div>
             <textarea
               className="flabel"
+              data-testid="contentInput"
               type="text"
               value={content}
               onChange={(e) => setContent(e.target.value)}

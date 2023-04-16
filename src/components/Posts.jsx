@@ -67,7 +67,7 @@ const Posts = () => {
                 <div className="col-sm-6 py-3 top">
                   <div className="card width-m py-2 top" key={post.id}>
                     <Link to={`/posts/${post.id}`}>
-                      <div className="card-body">
+                      <div className="card-body" data-testid="postsData">
                         <h3 className="font-bold card-title top">
                           {post.title}
                         </h3>

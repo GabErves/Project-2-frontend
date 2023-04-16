@@ -2,8 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 
 import React from 'react';
 
-import About from './components/About';
-
 import Create from './components/Create';
 
 import Footer from './components/Footer';
@@ -33,7 +31,6 @@ const App = () => {
         <Route path="/posts/:id/edit" element={<Edit />}></Route>
         <Route path="/posts/:id/delete" element={<Delete />}></Route>
         <Route path="/posts" element={<Posts />}></Route>
-        <Route path="/about" element={<About />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
 
