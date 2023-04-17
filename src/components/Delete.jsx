@@ -58,7 +58,10 @@ const Delete = () => {
     return (
       <>
         <div className="container text-center">
-          <h3 className="text-center p-4"> Your Post Has Been Deleted </h3>
+          <h3 className="text-center p-4" data-testid="Deleted Post">
+            {' '}
+            Your Post Has Been Deleted{' '}
+          </h3>
           <Link to={`/posts`}>
             <button type="button" className="btn btn-primary btn-lg">
               Return to Posts
@@ -71,7 +74,9 @@ const Delete = () => {
 
   return (
     <>
-      <h2 className="p-4 font-bold display-4">Delete Post</h2>
+      <h2 className="p-4 font-bold display-4" data-testid="Delete Post">
+        Delete Post
+      </h2>
 
       <div className="container text-center ">
         <div>

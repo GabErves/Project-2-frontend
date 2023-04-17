@@ -4,6 +4,30 @@ import '@testing-library/jest-dom/extend-expect';
 import Create from './Create';
 import axios from 'axios';
 
+describe('Create renders properly', () => {
+  beforeEach(() => {
+    render(<Create></Create>);
+  });
+
+  test('Header of Create Page is rendered', () => {
+    const content = screen.getByTestId('create post');
+
+    expect(content).toHaveTextContent('Create Post');
+  });
+
+  test('Title textbox header is rendered correctly', () => {
+    const content = screen.getByTestId('Title');
+
+    expect(content).toHaveTextContent('Title');
+  });
+
+  test('Content textbox header is rendered correctly', () => {
+    const content = screen.getByTestId('Content');
+
+    expect(content).toHaveTextContent('Content');
+  });
+});
+
 describe('Create makes proper API calls', () => {
   beforeEach(() => {
     render(<Create></Create>);
@@ -32,29 +56,5 @@ describe('Create makes proper API calls', () => {
         }
       );
     });
-  });
-});
-
-describe('Create renders properly', () => {
-  beforeEach(() => {
-    render(<Create></Create>);
-  });
-
-  test('Header of Create Page is rendered', () => {
-    const content = screen.getByTestId('create post');
-
-    expect(content).toHaveTextContent('Create Post');
-  });
-
-  test('Title textbox header is rendered correctly', () => {
-    const content = screen.getByTestId('Title');
-
-    expect(content).toHaveTextContent('Title');
-  });
-
-  test('Content textbox header is rendered correctly', () => {
-    const content = screen.getByTestId('Content');
-
-    expect(content).toHaveTextContent('Content');
   });
 });

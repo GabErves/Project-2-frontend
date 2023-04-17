@@ -59,7 +59,9 @@ const Post = () => {
 
   return (
     <>
-      <h2 className="text-center">Specific Post</h2>
+      <h2 className="text-center" data-testid="specific post">
+        Specific Post
+      </h2>
       <div className="container align-center">
         <>
           <div className="row top">
@@ -95,13 +97,21 @@ const Post = () => {
 
       <div className="container text-center ">
         <Link to={`/posts/${postData.id}/edit`}>
-          <button type="button" className="btn btn-primary btn-lg mx-3">
+          <button
+            type="button"
+            className="btn btn-primary btn-lg mx-3"
+            data-testid="edit post"
+          >
             Edit Post
           </button>
         </Link>
 
         <Link to={`/posts/${postData.id}/delete`}>
-          <button type="button" className="btn btn-danger btn-lg mx-3">
+          <button
+            type="button"
+            className="btn btn-danger btn-lg mx-3"
+            data-testid="delete post"
+          >
             Delete Post
           </button>
         </Link>

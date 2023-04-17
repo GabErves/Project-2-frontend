@@ -46,70 +46,89 @@ const Posts = () => {
     fetchAPIData();
   }, []);
 
-  if (loading) {
-    return (
-      <>
-        <p>Data Here: {JSON.stringify(postData)}</p>
-        <h3 className="text-center p-4"> Loading... </h3>
-      </>
-    );
-  }
-
   //JSX:
   return (
     <>
-      <h2 className="p-4 font-bold display-4">All Posts</h2>
-      <div className="container align-center">
-        {postData.map((post) => {
-          return (
-            <>
-              <div className="row top">
-                <div className="col-sm-6 py-3 top">
-                  <div className="card width-m py-2 top" key={post.id}>
-                    <Link to={`/posts/${post.id}`}>
-                      <div className="card-body" data-testid="postsData">
-                        <h3 className="font-bold card-title top">
-                          {post.title}
-                        </h3>
-                        <h6 className="card-subtitle mb-2 text-muted top">
-                          (@User)
-                        </h6>
-                        <p className="card-text">{post.content}</p>
-                        <img
-                          className="size"
-                          src="https://contenthub-static.grammarly.com/blog/wp-content/uploads/2017/11/how-to-write-a-blog-post.jpeg"
-                        ></img>
-                        <p>
-                          Last Updated:{' '}
-                          {format(new Date(post.last_updated), 'dd/mm/yyyy')}{' '}
-                          {new Date(post.last_updated).toLocaleTimeString([], {
-                            hour12: false,
-                          })}
-                        </p>
+      {!loading && (
+        <>
+          <h2 className="p-4 font-bold display-4" data-testid="all posts">
+            All Posts
+          </h2>
+          <div className="container align-center">
+            {postData.map((post) => {
+              return (
+                <>
+                  <div className="row top">
+                    <div className="col-sm-6 py-3 top">
+                      <div className="card width-m py-2 top" key={post.id}>
+                        <Link to={`/posts/${post.id}`}>
+                          <div className="card-body" data-testid="postsData">
+                            <h3 className="font-bold card-title top">
+                              {post.title}
+                            </h3>
+                            <h6 className="card-subtitle mb-2 text-muted top">
+                              (@User)
+                            </h6>
+                            <p className="card-text">{post.content}</p>
+                            <img
+                              className="size"
+                              src="https://contenthub-static.grammarly.com/blog/wp-content/uploads/2017/11/how-to-write-a-blog-post.jpeg"
+                            ></img>
+                            <p>
+                              Last Updated:{' '}
+                              {format(
+                                new Date(post.last_updated),
+                                'dd/mm/yyyy'
+                              )}{' '}
+                              {new Date(post.last_updated).toLocaleTimeString(
+                                [],
+                                {
+                                  hour12: false,
+                                }
+                              )}
+                            </p>
 
-                        <p>
-                          Originally Published:{' '}
-                          {format(
-                            new Date(post.originally_published),
-                            'dd/mm/yyyy'
-                          )}{' '}
-                          {new Date(
-                            post.originally_published
-                          ).toLocaleTimeString([], {
-                            hour12: false,
-                          })}
-                        </p>
+                            <p>
+                              Originally Published:{' '}
+                              {format(
+                                new Date(post.originally_published),
+                                'dd/mm/yyyy'
+                              )}{' '}
+                              {new Date(
+                                post.originally_published
+                              ).toLocaleTimeString([], {
+                                hour12: false,
+                              })}
+                            </p>
+                          </div>
+                        </Link>
                       </div>
-                    </Link>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </>
-          );
-        })}
-      </div>
+                </>
+              );
+            })}
+          </div>
+        </>
+      )}
+
+      {loading && (
+        <>
+          <p>Data Here: {JSON.stringify(postData)}</p>
+          <h3 className="text-center p-4" data-testid="loading">
+            {' '}
+            Loading...{' '}
+          </h3>
+        </>
+      )}
+
+      {error && (
+        <div className="text-center p-4">
+          <h3>Error: {error}</h3>
+        </div>
+      )}
     </>
-  );
-};
+  ); //End of return
+}; //End of function
 
 export default Posts;
