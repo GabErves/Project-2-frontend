@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Logo22 from './Logo22.png';
-//import './Header.css';
-
-import { NavLink as RouterLink } from 'react-router-dom';
-
+import { NavLink as RouterLink, useLocation } from 'react-router-dom';
+import './Header.css';
 const Header = () => {
-  const getClassName = (props) => {
-    return `${
-      props.isActive ? 'fw-bold' : ''
-    } hover:underline hover:text-gray-600 transition duration-300 `;
+  const [activeLink, setActiveLink] = useState('');
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setActiveLink(location.pathname);
+  }, [location]);
+
+  const getClassName = (path) => {
+    if (path === activeLink) {
+      return 'font-weight text-primary';
+    } else {
+      return 'text-dark';
+    }
   };
+
+  //   const getClassName = props => {
+  //     return `${props.isActive ? 'font-bold' : ''} hover:underline hover:text-gray-600 transition duration-300 `
+  // }
 
   return (
     <>
@@ -35,11 +47,11 @@ const Header = () => {
           </button> */}
 
           <div className="collapse navbar-collapse pt-3 px-3" id="navmenu">
-            <ul className="navbar-nav ms-auto fs-3">
+            <ul className="navbar-nav ms-auto ">
               <li className="nav-link navs" data-testid="Home Link">
                 <h3 className="navs">
                   <RouterLink
-                    className={`${() => getClassName()} text-2xl  fs-1 `}
+                    className={`${getClassName('/')} display-4`}
                     to="/"
                   >
                     Home
@@ -50,7 +62,7 @@ const Header = () => {
               <li className="nav-link">
                 <h3 className="navs">
                   <RouterLink
-                    className={`${() => getClassName()} text-2xl fs-1 `}
+                    className={`${getClassName('/create')} display-4`}
                     to="/create"
                   >
                     Create
@@ -61,7 +73,7 @@ const Header = () => {
               <li className="nav-link">
                 <h3 className="navs navbar-nav navbar-right">
                   <RouterLink
-                    className={`${() => getClassName()} text-2xl  `}
+                    className={`${getClassName('/posts')} display-4`}
                     to="/posts"
                   >
                     All Posts

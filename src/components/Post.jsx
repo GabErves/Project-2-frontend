@@ -60,7 +60,7 @@ const Post = () => {
 
   return (
     <>
-      <h2 className="text-center" data-testid="specific post">
+      <h2 className="p-4 display-4 fw-bolder" data-testid="create post">
         Specific Post
       </h2>
       <div className="container align-center">
