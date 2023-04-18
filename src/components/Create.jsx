@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-//import './Header.css';
+import './Header.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
