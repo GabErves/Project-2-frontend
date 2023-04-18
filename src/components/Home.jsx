@@ -1,9 +1,14 @@
 import React from 'react';
 import './Header.css';
 import Carousel from 'react-bootstrap/Carousel';
+import { format } from 'date-fns';
+import { useState, useEffect } from 'react';
 import Header from './Header';
+import axios from 'axios';
+import HomePosts from './HomePosts';
 
 const Home = () => {
+  
   return (
     <div>
       {/* <h2 className="text-center">Homepage</h2> */}
@@ -61,9 +66,17 @@ const Home = () => {
     </div>
     </div>
 
+  
+    <HomePosts/>
 
-    </div>
-  );
-};
+    
+
+    </div>)}
+
+
+    
+   
+ 
+
 
 export default Home;
