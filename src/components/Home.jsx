@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import { useState, useEffect } from 'react';
 import Header from './Header';
 import axios from 'axios';
-import HomePosts from './HomePosts';
+
 
 const Home = () => {
   
@@ -67,8 +67,9 @@ const Home = () => {
     </div>
 
   
-    <HomePosts/>
+   
 
+   
     
 
     </div>)}

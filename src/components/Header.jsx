@@ -27,7 +27,7 @@ const Header = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <RouterLink to="/">
+          <RouterLink to="/posts">
             <img className="logo" src={Logo22} alt="My Image" />
           </RouterLink>
 
@@ -51,8 +51,8 @@ const Header = () => {
               <li className="nav-link navs" data-testid="Home Link">
                 <h3 className="navs">
                   <RouterLink
-                    className={`${getClassName('/')} display-4`}
-                    to="/"
+                    className={`${getClassName('/posts')} display-4`}
+                    to="/posts"
                   >
                     Home
                   </RouterLink>
@@ -73,10 +73,10 @@ const Header = () => {
               <li className="nav-link">
                 <h3 className="navs navbar-nav navbar-right">
                   <RouterLink
-                    className={`${getClassName('/posts')} display-4`}
-                    to="/posts"
+                    className={`${getClassName('/')} display-4`}
+                    to="/"
                   >
-                    All Posts
+                    About
                   </RouterLink>
                 </h3>
               </li>
