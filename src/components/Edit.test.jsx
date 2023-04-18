@@ -1,19 +1,23 @@
-import { describe, it, expect, test, beforeEach } from 'vitest';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+
+
+import React from 'react';
+import { render, screen, waitFor } from '@testing-library/react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Edit from './Edit';
-import axios from 'axios';
 
-describe('Edit renders properly', () => {
+describe('Edit Component renders correctly', () => {
   beforeEach(() => {
-    render(<Edit />);
+    render(
+      <Router>
+        <Edit />
+      </Router>
+    );
   });
 
-  test('Header of Edit Page is rendered', () => {
-    
-  });
+  test('The text "Edit Post" appears', async () => {
+    await waitFor(() => {
+      expect(screen.queryAllByText(`Edit Post`));
+    });
 
-  test('Header of Edit Post page is rendered', () => {
-    
   });
 });

@@ -39,6 +39,7 @@ const Posts = () => {
       setError(error);
     } finally {
       setLoading(false);
+      console.log('loading is false');
     }
   };
 
@@ -50,8 +51,8 @@ const Posts = () => {
   return (
     <>
       {!loading && (
-        <>
-          <h2 className="p-4 font-bold display-4" data-testid="all posts">
+        <div>
+          <h2 className="p-4 font-bold display-4" data-testid="All_Posts">
             All Posts
           </h2>
           <div className="container align-center">
@@ -109,7 +110,7 @@ const Posts = () => {
               );
             })}
           </div>
-        </>
+        </div>
       )}
 
       {loading && (

@@ -7,8 +7,9 @@ import { format } from 'date-fns';
 
 import Header from './Header';
 const Post = () => {
-  const params = useParams(); //gets object with id from path in <Route>
+  var params = useParams(); //gets object with id from path in <Route>
 
+  console.log('Id in next line:');
   console.log(params['id']); //gets id
 
   const [loading, setLoading] = useState(false);

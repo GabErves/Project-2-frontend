@@ -15,6 +15,9 @@ const Home = () => {
 
 <p  className="text-center">So what are you waiting for? Start exploring our site and become a part of our vibrant community of bloggers. We can't wait to see what you create!</p> */}
 
+      <h2 className="p-4 display-4 fw-bolder" data-testid="create post">
+        Welcome to Bulletin Social!
+      </h2>
       <Carousel>
         <Carousel.Item>
           <img
