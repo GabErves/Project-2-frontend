@@ -5,7 +5,7 @@
     height: "100vh";
 }
 .navs{
-   
+
     font-size: 35px;
     color: black;
     margin-right: 8px;
@@ -44,4 +44,7 @@ h2{
 .flabel{
     text-align: center;
 
+}
+.gradi{
+    background-color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,101,1) 35%, rgba(0,212,255,1) 100%);
 }

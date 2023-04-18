@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo22 from './Logo22.png';
-//import './Header.css';
+import './Header.css';
 
 import { NavLink as RouterLink } from 'react-router-dom';
 

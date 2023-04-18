@@ -9,13 +9,15 @@ describe('Posts renders properly', () => {
   });
 
   test('Loading State of Create Page is rendered', () => {
-    const content = screen.getByText('loading');
+    const content = waitFor(() => screen.getByText(/loading/i));
+
+    // const content = screen.getByText('loading');
 
     expect(content.innerHTML).toHaveTextContent('Loading');
   });
 
   test('Header of Create Page is rendered', () => {
-    const content = screen.getByTestId('all posts');
+    const content = screen.getByQueryId('all posts');
 
     expect(content).toHaveTextContent('All Posts');
   });

@@ -116,7 +116,7 @@ const Edit = () => {
       <div className="container text-center ">
         <button
           type="button"
-          className="btn btn-primary btn-lg mx-3"
+          className="btn btn-primary btn-lg mx-3 gradi"
           onClick={updateContent}
         >
           Submit
