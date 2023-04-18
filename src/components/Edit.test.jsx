@@ -1,20 +1,20 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Post from './Post';
+import Edit from './Edit';
 
-describe('Post Component renders correctly', () => {
+describe('Edit Component renders correctly', () => {
   beforeEach(() => {
     render(
       <Router>
-        <Post />
+        <Edit />
       </Router>
     );
   });
 
-  test('The text "Specific" appears', async () => {
+  test('The text "Edit Post" appears', async () => {
     await waitFor(() => {
-      expect(screen.queryAllByText(`Specific Post`));
+      expect(screen.queryAllByText(`Edit Post`));
     });
   });
 });

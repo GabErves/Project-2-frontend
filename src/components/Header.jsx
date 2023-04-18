@@ -36,7 +36,7 @@ const Header = () => {
 
           <div className="collapse navbar-collapse pt-3 px-3" id="navmenu">
             <ul className="navbar-nav ms-auto fs-3">
-              <li className="nav-link navs">
+              <li className="nav-link navs" data-testid="Home Link">
                 <h3 className="navs">
                   <RouterLink
                     className={`${() => getClassName()} text-2xl  fs-1 `}
