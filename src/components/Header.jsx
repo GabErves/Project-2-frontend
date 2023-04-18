@@ -13,7 +13,7 @@ const Header = () => {
 
   const getClassName = (path) => {
     if (path === activeLink) {
-      return 'font-weight text-primary';
+      return 'font-weight text-info';
     } else {
       return 'text-dark';
     }
