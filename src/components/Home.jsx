@@ -1,5 +1,5 @@
 import React from 'react';
-//import './Header.css';
+import './Header.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Header from './Header';
 
@@ -55,6 +55,13 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+      <div class="container">
+      <div class="rectangle">
+      <h3 className='blob'>"Bulletin Social is a vibrant and engaging platform for bloggers to share their unique perspectives and connect with readers from all over the world. Whether you're a seasoned writer or just starting out, Bulletin Social provides a user-friendly interface and a supportive community of fellow bloggers to help you achieve your goals. From personal essays to informative how-to guides, Bulletin Social is the perfect place to showcase your writing skills and build your online presence."</h3>
+    </div>
+    </div>
+
+
     </div>
   );
 };
