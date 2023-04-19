@@ -5,6 +5,8 @@ import { format } from 'date-fns';
 import { useState, useEffect } from 'react';
 import Header from './Header';
 import axios from 'axios';
+import food from './food.jpg';
+import travel from './travel.jpg'
 
 
 const Home = () => {
@@ -38,7 +40,7 @@ const Home = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/wp-content/uploads/2022/09/brand_identity.jpg"
+            src={food}
             alt="Second slide"
           />
 
@@ -50,7 +52,7 @@ const Home = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://www.forbes.com/advisor/wp-content/uploads/2022/09/how_to_start_a_travel_blog_-_article_image.jpg"
+            src={travel}
             alt="Third slide"
           />
 
