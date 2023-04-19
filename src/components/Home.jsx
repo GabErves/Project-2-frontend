@@ -7,6 +7,7 @@ import Header from './Header';
 import axios from 'axios';
 import food from './food.jpg';
 import travel from './travel.jpg'
+import lifestyle from './lifestyle.jpeg'
 
 
 const Home = () => {
@@ -29,7 +30,7 @@ const Home = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://www.hotbeautyhealth.com/wp-content/uploads/2016/02/start-a-lifestyle-blog.jpg"
+            src={lifestyle}
             alt="First slide"
           />
           <Carousel.Caption>
