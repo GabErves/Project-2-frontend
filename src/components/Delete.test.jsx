@@ -14,7 +14,7 @@ describe('Delete Component renders correctly', () => {
 
   test('The text "Delete Post" appears', async () => {
     await waitFor(() => {
-      expect(screen.queryAllByText(`Delete Post`));
+      expect(screen.queryAllByText(`Delete Post`)).toBeTruthy();
     });
   });
 });

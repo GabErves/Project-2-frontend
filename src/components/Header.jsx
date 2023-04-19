@@ -12,7 +12,14 @@ const Header = () => {
   }, [location]);
 
   const getClassName = (path) => {
-    if (path === activeLink) {
+    if (path == '/') {
+      if (activeLink === path) {
+        return 'font-weight text-info';
+      } else {
+        return 'text-dark';
+      }
+    } else if (activeLink.includes(path)) {
+      //Uses .includes() due to ids being part of links
       return 'font-weight text-info';
     } else {
       return 'text-dark';

@@ -12,9 +12,13 @@ describe('Post Component renders correctly', () => {
     );
   });
 
-  test('The text "Specific" appears', async () => {
+  test('The loading text "Loading" appears', async () => {
+    expect(screen.getByText(`Loading...`)).toBeTruthy();
+  });
+
+  test('The text "Specific Post" appears', async () => {
     await waitFor(() => {
-      expect(screen.queryAllByText(`Specific Post`));
+      expect(screen.queryByText(`Specific Post`)).toBeTruthy();
     });
   });
 });

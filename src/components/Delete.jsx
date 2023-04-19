@@ -60,11 +60,11 @@ const Delete = () => {
         <div className="container text-center">
           <h3 className="text-center p-4" data-testid="Deleted Post">
             {' '}
-            Your Post Has Been Deleted{' '}
+            Your Post Has Been <span className="text-danger">Deleted</span>{' '}
           </h3>
           <Link to={`/posts`}>
             <button type="button" className="btn btn-primary btn-lg">
-              Return to Posts
+              Return to Home
             </button>
           </Link>
         </div>

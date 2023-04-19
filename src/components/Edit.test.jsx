@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -16,8 +14,7 @@ describe('Edit Component renders correctly', () => {
 
   test('The text "Edit Post" appears', async () => {
     await waitFor(() => {
-      expect(screen.queryAllByText(`Edit Post`));
+      expect(screen.queryAllByText(`Edit Post`)).toBeTruthy();
     });
-
   });
 });

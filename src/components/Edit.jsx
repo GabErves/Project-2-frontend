@@ -64,10 +64,14 @@ const Edit = () => {
     return (
       <>
         <div className="container text-center">
-          <h3 className="text-center p-4"> Your Post Has Been Updated </h3>
+          <h3 className="text-center p-4">
+            {' '}
+            Your Post Has Been{' '}
+            <span className="text-primary fw-bold">Updated</span>{' '}
+          </h3>
           <Link to={`/posts`}>
             <button type="button" className="btn btn-primary btn-lg">
-              Return to Posts
+              Return to Home
             </button>
           </Link>
         </div>

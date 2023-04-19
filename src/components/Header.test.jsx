@@ -22,14 +22,14 @@ describe('Header Component renders correctly', () => {
   });
 
   test('The section "Home" appears', async () => {
-    expect(screen.queryAllByText(`Home`));
+    expect(screen.queryByText(`Home`)).toBeTruthy();
   });
 
   test('The section "Create" appears', async () => {
-    expect(screen.queryAllByText(`Create`));
+    expect(screen.queryByText(`Create`)).toBeTruthy();
   });
 
-  test('The section "All Posts" appears', async () => {
-    expect(screen.queryAllByText(`All Posts`));
+  test('The section "About" appears', async () => {
+    expect(screen.queryByText(`About`)).toBeTruthy();
   });
 });
